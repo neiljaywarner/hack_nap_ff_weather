@@ -1,7 +1,7 @@
 import '../backend/api_requests/api_calls.dart';
-import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
+import '../flutter_flow/custom_functions.dart' as functions;
 import 'dart:async';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:custom_refresh_indicator/custom_refresh_indicator.dart';
@@ -26,22 +26,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
-        leading: FlutterFlowIconButton(
-          borderColor: Colors.transparent,
-          borderRadius: 30,
-          borderWidth: 1,
-          buttonSize: 60,
-          icon: Icon(
-            Icons.arrow_back_rounded,
-            color: Colors.white,
-            size: 30,
-          ),
-          onPressed: () {
-            print('IconButton pressed ...');
-          },
-        ),
         title: Text(
-          'Unofficial\nwww.timeanddate.com/weather/',
+          'Unofficial Hot Popular Cities List DEMO\nwww.timeanddate.com/weather/',
           style: FlutterFlowTheme.of(context).bodyText2.override(
                 fontFamily: 'Poppins',
                 color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -202,7 +188,8 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                             .fromSTEB(
                                                                 0, 0, 4, 0),
                                                     child: Text(
-                                                      citiesIndex.toString(),
+                                                      functions
+                                                          .addOne(citiesIndex),
                                                       style: FlutterFlowTheme
                                                               .of(context)
                                                           .title2
