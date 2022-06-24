@@ -38,7 +38,16 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Column(
             mainAxisSize: MainAxisSize.max,
-            children: [],
+            children: [
+              Text(
+                'List of popular cities from ',
+                style: FlutterFlowTheme.of(context).bodyText1,
+              ),
+              Text(
+                'https://www.timeanddate.com/weather/',
+                style: FlutterFlowTheme.of(context).bodyText1,
+              ),
+            ],
           ),
         ),
       ),
