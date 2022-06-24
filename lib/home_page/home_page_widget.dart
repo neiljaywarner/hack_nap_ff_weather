@@ -262,7 +262,10 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                         children: [
                                           Expanded(
                                             child: AutoSizeText(
-                                              'Dummy String, replace or remove',
+                                              getJsonField(
+                                                citiesItem,
+                                                r'''$.farenheit''',
+                                              ).toString(),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyText1
