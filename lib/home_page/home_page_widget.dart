@@ -26,15 +26,15 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
-        title: AutoSizeText(
+        title: Text(
           'Unofficial Hot Popular Cities List DEMO\nwww.timeanddate.com/weather/',
           style: FlutterFlowTheme.of(context).bodyText2.override(
                 fontFamily: 'Poppins',
-                color: FlutterFlowTheme.of(context).secondaryBackground,
+                color: FlutterFlowTheme.of(context).primaryBtnText,
               ),
         ),
         actions: [],
-        centerTitle: true,
+        centerTitle: false,
         elevation: 2,
       ),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
