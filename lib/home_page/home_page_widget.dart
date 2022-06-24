@@ -1,4 +1,5 @@
 import '../backend/api_requests/api_calls.dart';
+import '../flutter_flow/flutter_flow_icon_button.dart';
 import '../flutter_flow/flutter_flow_theme.dart';
 import '../flutter_flow/flutter_flow_util.dart';
 import 'dart:async';
@@ -25,16 +26,29 @@ class _HomePageWidgetState extends State<HomePageWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).primaryColor,
         automaticallyImplyLeading: false,
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30,
+          borderWidth: 1,
+          buttonSize: 60,
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: Colors.white,
+            size: 30,
+          ),
+          onPressed: () {
+            print('IconButton pressed ...');
+          },
+        ),
         title: Text(
-          'Page Title',
-          style: FlutterFlowTheme.of(context).title2.override(
+          'Unofficial\nwww.timeanddate.com/weather/',
+          style: FlutterFlowTheme.of(context).bodyText2.override(
                 fontFamily: 'Poppins',
-                color: Colors.white,
-                fontSize: 22,
+                color: FlutterFlowTheme.of(context).secondaryBackground,
               ),
         ),
         actions: [],
-        centerTitle: false,
+        centerTitle: true,
         elevation: 2,
       ),
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -44,14 +58,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
           child: Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Text(
-                'List of popular cities from ',
-                style: FlutterFlowTheme.of(context).bodyText1,
-              ),
-              Text(
-                'https://www.timeanddate.com/weather/',
-                style: FlutterFlowTheme.of(context).bodyText1,
-              ),
               FutureBuilder<ApiCallResponse>(
                 future: (_apiRequestCompleter ??= Completer<ApiCallResponse>()
                       ..complete(
@@ -163,23 +169,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                           Row(
                                             mainAxisSize: MainAxisSize.max,
                                             children: [
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(0, 0, 8, 0),
-                                                child: Container(
-                                                  width: 40,
-                                                  height: 40,
-                                                  decoration: BoxDecoration(
-                                                    color: Color(0xFFEEEEEE),
-                                                    shape: BoxShape.circle,
-                                                  ),
-                                                  child: Icon(
-                                                    Icons.person,
-                                                    color: Color(0xFF4B39EF),
-                                                    size: 24,
-                                                  ),
-                                                ),
-                                              ),
                                               Text(
                                                 getJsonField(
                                                   citiesItem,
@@ -204,20 +193,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.end,
                                             children: [
-                                              Text(
-                                                'Overall',
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyText2
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color:
-                                                              Color(0xFF7C8791),
-                                                          fontSize: 14,
-                                                          fontWeight:
-                                                              FontWeight.normal,
-                                                        ),
-                                              ),
                                               Row(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
@@ -241,11 +216,6 @@ class _HomePageWidgetState extends State<HomePageWidget> {
                                                                 FontWeight.w500,
                                                           ),
                                                     ),
-                                                  ),
-                                                  Icon(
-                                                    Icons.star_rounded,
-                                                    color: Color(0xFF4B39EF),
-                                                    size: 20,
                                                   ),
                                                 ],
                                               ),
